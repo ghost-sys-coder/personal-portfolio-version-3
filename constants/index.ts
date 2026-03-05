@@ -49,15 +49,16 @@ export const projects: Project[] = [
     credentials: { email: "franktamalejr@gmail.com", password: "M@rgret55" },
     featured: true,
   },
-  {
+   {
     id: 5,
-    name: "Ecommerce Store with Sanity",
+    name: "Inspire Me Salon Website",
     description:
-      "Headless ecommerce storefront powered by Sanity CMS — product pages, cart, checkout flow, and real-time content updates.",
-    imageUrl: "/projects/sanity-ecommerce-store.png",
-    githubUrl: "https://github.com/ghost-sys-coder/ecommerce_next_sanity_store",
-    projectUrl: "https://ecommerce-next-sanity-store.vercel.app/",
-    tags: ["React.js", "Next.js", "Sanity CMS"],
+      "Business website for a premium salon brand — services, gallery, booking info, and brand storytelling with a polished UI.",
+    imageUrl: "/projects/salon-website-template.png",
+    githubUrl: "https://github.com/ghost-sys-coder/salon-website-template",
+    projectUrl: "https://salon-website-template-five.vercel.app/",
+      tags: ["React.js", "Next.js", "Business"],
+    featured: true
   },
   {
     id: 6,
@@ -69,16 +70,15 @@ export const projects: Project[] = [
     projectUrl: "https://shoplocker.vercel.app/",
     tags: ["Next.js", "React.js"],
   },
-  {
+   {
     id: 7,
-    name: "Inspire Me Salon Website",
+    name: "Ecommerce Store with Sanity",
     description:
-      "Business website for a premium salon brand — services, gallery, booking info, and brand storytelling with a polished UI.",
-    imageUrl: "/projects/salon-website-template.png",
-    githubUrl: "https://github.com/ghost-sys-coder/salon-website-template",
-    projectUrl: "https://salon-website-template-five.vercel.app/",
-      tags: ["React.js", "Next.js", "Business"],
-    featured: true
+      "Headless ecommerce storefront powered by Sanity CMS — product pages, cart, checkout flow, and real-time content updates.",
+    imageUrl: "/projects/sanity-ecommerce-store.png",
+    githubUrl: "https://github.com/ghost-sys-coder/ecommerce_next_sanity_store",
+    projectUrl: "https://ecommerce-next-sanity-store.vercel.app/",
+    tags: ["React.js", "Next.js", "Sanity CMS"],
   },
   {
     id: 8,
@@ -92,17 +92,6 @@ export const projects: Project[] = [
   },
   {
     id: 9,
-    name: "Bienvenidos Apartment",
-    description:
-      "Property listing website for a residential apartment complex — showcasing units, amenities, and contact information.",
-    imageUrl: "/projects/bienvenidos.png",
-    githubUrl:
-      "https://github.com/ghost-sys-coder/apartment-website/tree/main/Rinah_Website",
-    projectUrl: "https://myapartmentwebsite.netlify.app/",
-    tags: ["React.js", "Real Estate"],
-  },
-  {
-    id: 10,
     name: "DreamHomes Real Estate",
     description:
       "Fullstack vanilla JavaScript real estate web app — property search, listings, and contact forms without any framework.",
@@ -111,6 +100,17 @@ export const projects: Project[] = [
       "https://github.com/ghost-sys-coder/fullstack-vanilla-javascript-realestate-web-app",
     projectUrl: "https://dreamhomesug.onrender.com/",
     tags: ["JavaScript", "Fullstack"],
+  },
+  {
+    id: 10,
+    name: "Bienvenidos Apartment",
+    description:
+      "Property listing website for a residential apartment complex — showcasing units, amenities, and contact information.",
+    imageUrl: "/projects/bienvenidos.png",
+    githubUrl:
+      "https://github.com/ghost-sys-coder/apartment-website/tree/main/Rinah_Website",
+    projectUrl: "https://myapartmentwebsite.netlify.app/",
+    tags: ["React.js", "Real Estate"],
   },
   {
     id: 11,
