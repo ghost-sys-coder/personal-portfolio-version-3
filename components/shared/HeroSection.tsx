@@ -329,7 +329,7 @@ export default function Hero() {
               </motion.button>
 
               <motion.a
-                href="/Tamale-Frank-CV.pdf"
+                href="/assets/CV_TAMALEFRANK.pdf"
                 download
                 className="flex items-center gap-2 px-7 py-3.5 border border-[#2A2A2E] text-[#F2F0EB] font-medium rounded-lg bg-[#111113]"
                 whileHover={{

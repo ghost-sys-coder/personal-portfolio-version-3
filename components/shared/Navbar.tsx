@@ -99,7 +99,7 @@ export default function Navigation() {
             {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-3">
               <a
-                href="/Tamale-Frank-CV.pdf"
+                href="/assets/CV_TAMALEFRANK.pdf"
                 download
                 className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[#C9A84C] hover:bg-[#F0C060] text-[#0A0A0B] text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#C9A84C]/25 hover:-translate-y-0.5 active:translate-y-0"
               >

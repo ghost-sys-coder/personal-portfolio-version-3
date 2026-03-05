@@ -3,82 +3,18 @@
 import { useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import {
-  Mail,
-  MapPin,
-  Clock,
-  Github,
-  Linkedin,
-  Twitter,
   Send,
   Loader2,
   CheckCircle2,
-  AlertCircle,
-} from 'lucide-react'
+} from 'lucide-react';
 
-const CONTACT_INFO = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'franktamalejr@gmail.com',
-    href: 'mailto:franktamalejr@gmail.com',
-    color: 'amber-500',
-  },
-  {
-    icon: MapPin,
-    label: 'Location',
-    value: 'Kampala, Uganda — Remote Globally',
-    href: null,
-    color: 'emerald-400',
-  },
-  {
-    icon: Clock,
-    label: 'Availability',
-    value: 'Open to new projects',
-    href: null,
-    color: 'cyan-400',
-  },
-]
+import { SectionLabel } from './SectionLabel';
+import { InputField } from './InputField';
+import { BUDGETS, CONTACT_INFO, PROJECT_TYPES, SOCIAL_LINKS } from '@/constants';
+import { toast } from 'sonner';
+import axios from 'axios';
 
-const SOCIAL_LINKS = [
-  {
-    icon: Github,
-    label: 'GitHub',
-    href: 'https://github.com/ghost-sys-coder',
-    handle: '@ghost-sys-coder',
-    color: 'zinc-100',
-  },
-  {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/in/tamalefrank',
-    handle: 'Tamale Frank',
-    color: 'blue-600',
-  },
-  {
-    icon: Twitter,
-    label: 'Twitter / X',
-    href: 'https://twitter.com/tamalefrank',
-    handle: '@tamalefrank',
-    color: 'sky-500',
-  },
-]
 
-const PROJECT_TYPES = [
-  'Web Application',
-  'Mobile App',
-  'E-commerce',
-  'Dashboard / Admin',
-  'AI Integration',
-  'Other',
-]
-
-const BUDGETS = [
-  '< $1,000',
-  '$1,000 – $5,000',
-  '$5,000 – $15,000',
-  '$15,000+',
-  "Let's discuss",
-]
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -97,46 +33,9 @@ const staggerContainer = {
   },
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className='flex items-center gap-3 mb-5'>
-      <div className='w-6 h-px bg-amber-500/70' />
-      <span className='font-mono text-amber-500 text-xs tracking-[0.25em] uppercase font-medium'>
-        {children}
-      </span>
-    </div>
-  )
-}
 
-function InputField({
-  label,
-  id,
-  error,
-  children,
-}: {
-  label: string
-  id: string
-  error?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className='flex flex-col gap-2'>
-      <label
-        htmlFor={id}
-        className='text-zinc-500 text-xs font-mono uppercase tracking-widest'
-      >
-        {label}
-      </label>
-      {children}
-      {error && (
-        <p className='text-red-400 text-xs flex items-center gap-1.5 mt-1'>
-          <AlertCircle size={12} />
-          {error}
-        </p>
-      )}
-    </div>
-  )
-}
+
+
 
 const inputBase =
   "w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-100 text-sm placeholder-zinc-600 outline-none focus:border-amber-500/60 focus:ring-2 focus:ring-amber-500/20 transition-all duration-200"
@@ -175,7 +74,7 @@ export default function Contact() {
     return errs
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
@@ -183,14 +82,26 @@ export default function Contact() {
       return
     }
 
-    setErrors({})
-    setStatus('loading')
+    console.log("formContent:", form);
 
-    // TODO: Replace with real submission (EmailJS, Resend, your API route, etc.)
-    await new Promise(res => setTimeout(res, 1800))
-    setStatus('success')
-    setForm(INITIAL_FORM)
-    setTimeout(() => setStatus('idle'), 5000)
+    setErrors({})
+    setStatus('loading');
+
+    try {
+      const { status, data } = await axios.post("/api/inquiries", form);
+      if (status === 201 && data?.success) {
+        toast.success(data?.message || "Inquiry submitted! Allow us get back to your!");
+        setStatus("success");
+        setForm(INITIAL_FORM);
+
+        setTimeout(() => {
+          setStatus("idle");
+        }, 5000);
+      }
+    } catch (error) {
+      console.error("Something went wrong!", error);
+      toast.error((error as Error).message || "Something went");
+    }
   }
 
   return (
@@ -274,7 +185,7 @@ export default function Contact() {
                     className='group flex items-center gap-4 p-3 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-zinc-950/50 hover:bg-zinc-900/80 transition-all'
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center border border-${color}/20 bg-${color}/5`}>
-                      <Icon size={14} className={`text-${color}`} />
+                      <Icon size={14} className={`text-white`} />
                     </div>
                     <div className='min-w-0'>
                       <p className='text-zinc-100 text-xs font-medium'>{label}</p>

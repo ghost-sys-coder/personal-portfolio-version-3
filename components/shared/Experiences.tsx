@@ -519,7 +519,7 @@ export default function Experience() {
             <span className="text-[#F2F0EB]">Download my CV</span> for a complete work history.
           </p>
           <motion.a
-            href="/Tamale-Frank-CV.pdf"
+            href="/assets/CV_TAMALEFRANK.pdf"
             download
             className="shrink-0 flex items-center gap-2 px-6 py-3 bg-[#C9A84C] text-[#0A0A0B] font-semibold text-sm rounded-xl"
             whileHover={{

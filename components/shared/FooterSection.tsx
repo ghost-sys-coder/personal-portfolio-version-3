@@ -30,7 +30,7 @@ const NAV_COLUMNS = [
   {
     label: "Resources",
     links: [
-      { text: "Download CV", href: "/Tamale-Frank-CV.pdf", download: true },
+      { text: "Download CV", href: "/assets/CV_TAMALEFRANK.pdf", download: true },
       { text: "GitHub Profile", href: "https://github.com/ghost-sys-coder", external: true },
       { text: "LinkedIn", href: "https://linkedin.com/in/tamalefrank", external: true },
       { text: "Send Email", href: "mailto:franktamalejr@gmail.com" },
