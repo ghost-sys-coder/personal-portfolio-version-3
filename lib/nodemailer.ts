@@ -222,7 +222,7 @@ function buildClientEmail(p: InquiryEmailPayload): string {
 // ── TEMPLATE 2 — ADMIN NOTIFICATION ──────────────────────────────────────────
 
 function buildAdminEmail(p: InquiryEmailPayload): string {
-  const submittedAt = new Date().toLocaleString("en-GB", {
+  const submittedAt = new Date().toLocaleString("en-UG", {
     dateStyle: "full",
     timeStyle: "short",
   });
