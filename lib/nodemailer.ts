@@ -225,6 +225,7 @@ function buildAdminEmail(p: InquiryEmailPayload): string {
   const submittedAt = new Date().toLocaleString("en-UG", {
     dateStyle: "full",
     timeStyle: "short",
+    timeZone: "Africa/Kampala"
   });
 
   type Row = [label: string, value: string, isLink?: boolean];
