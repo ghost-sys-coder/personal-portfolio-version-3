@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 import type { Transporter, SendMailOptions } from "nodemailer";
 
-// ── TYPES ─────────────────────────────────────────────────────────────────────
 
 export interface InquiryEmailPayload {
   name: string;
@@ -16,18 +15,6 @@ interface EmailResult {
   error?: string;
 }
 
-// ── ENV GUIDE ─────────────────────────────────────────────────────────────────
-// Add these to .env.local:
-//
-//   SMTP_HOST=smtp.gmail.com
-//   SMTP_PORT=465
-//   SMTP_SECURE=true                # true for port 465, false for 587
-//   SMTP_USER=franktamalejr@gmail.com
-//   SMTP_PASS=xxxx_xxxx_xxxx_xxxx   # Gmail → Account → Security → App Passwords
-//   ADMIN_EMAIL=franktamalejr@gmail.com
-//   SITE_URL=https://tamalefrank.dev
-
-// ── TRANSPORTER ───────────────────────────────────────────────────────────────
 
 function createTransporter(): Transporter {
   return nodemailer.createTransport({
@@ -135,8 +122,8 @@ function buildClientEmail(p: InquiryEmailPayload): string {
 
   const steps: Array<[string, string]> = [
     ["01", "I carefully review your inquiry in detail"],
-    ["02", "You'll hear back within 24 hours"],
-    ["03", "We schedule a discovery call if it makes sense"],
+    ["02", "You'll hear back within 3 - 6 hours"],
+    ["03", "We schedule a discovery call"],
   ];
 
   const body = `
@@ -149,7 +136,7 @@ function buildClientEmail(p: InquiryEmailPayload): string {
       </h1>
       <p style="margin:12px 0 0;font-size:14px;color:${C.muted};line-height:1.65;">
         Your message landed safely. I&rsquo;ll review it and get back to you
-        within <strong style="color:${C.text};">24 hours</strong>.
+        within <strong style="color:${C.text};">6 hours</strong>.
       </p>
     </td></tr>
 
