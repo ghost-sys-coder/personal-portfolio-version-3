@@ -3,29 +3,40 @@ import { Clock, Github, Linkedin, Mail, MapPin, Twitter } from "lucide-react";
 export const projects: Project[] = [
   {
     id: 1,
-    name: "Veilcode Digital Solutions Agency",
+    name: "Veilcode Digital Solutions Agency - Rebranded",
     description:
       "A full-featured digital agency website showcasing services, portfolio, and client-facing pages — built with Next.js for performance and SEO.",
-    imageUrl: "/projects/veilcode-agency.png",
-    githubUrl: "https://github.com/ghost-sys-coder/veilcode-business-agency",
-    projectUrl: "https://veilcodestudio.vercel.app/",
-    tags: ["Next.js", "Web App"],
+    imageUrl: "/projects/veilcode-studio-live.png",
+    githubUrl: "https://github.com/ghost-sys-coder/new-agency-website-veilcode",
+    projectUrl: "https://veilcode.studio",
+    tags: ["Next.js", "Web App", "Featured"],
     featured: true,
   },
   {
     id: 2,
-    name: "Resume AI Analyzer",
+    name: "Veilcode Digital Solutions Agency",
     description:
-      "Enterprise-grade ATS powered by AI — analyses CVs, scores candidates, and surfaces insights for recruiters using Next.js and MongoDB.",
-    imageUrl: "/projects/ai-resume-analyzer-web-app.png",
-    githubUrl:
-      "https://github.com/ghost-sys-coder/React-with-NextJS-Enterprise-ready-applicant-tracking-system",
-    projectUrl: "https://cvscan-seven.vercel.app/",
-    tags: ["Next.js", "AI-Powered", "MongoDB"],
+      "A full-featured digital agency website showcasing services, portfolio, and client-facing pages — built with Next.js for performance and SEO.",
+    imageUrl: "/projects/veilcode-agency-hero.png",
+    githubUrl: "https://github.com/ghost-sys-coder/veilcode-business-agency",
+    projectUrl: "https://veilcodestudio.vercel.app/",
+    tags: ["Next.js", "Web App", "Featured"],
     featured: true,
   },
   {
     id: 3,
+    name: "Resume AI Analyzer",
+    description:
+      "Enterprise-grade ATS powered by AI — analyses CVs, scores candidates, and surfaces insights for recruiters using Next.js and MongoDB.",
+    imageUrl: "/projects/ai-resume-analyzer-hero.png",
+    githubUrl:
+      "https://github.com/ghost-sys-coder/React-with-NextJS-Enterprise-ready-applicant-tracking-system",
+    projectUrl: "https://cvscan-seven.vercel.app/",
+    tags: ["Next.js", "AI-Powered", "MongoDB", "Featured"],
+    featured: true,
+  },
+  {
+    id: 4,
     name: "Chat-2-My-PDF",
     description:
       "AI SaaS app that lets users upload PDFs and have intelligent conversations with their documents — built with Next.js and LLM integration.",
@@ -33,35 +44,35 @@ export const projects: Project[] = [
     githubUrl:
       "https://github.com/ghost-sys-coder/chat-2-my-pdf-ai-saas-project",
     projectUrl: "https://chat2mypdf.vercel.app/",
-    tags: ["Next.js", "AI-Powered"],
+    tags: ["Next.js", "AI-Powered", "Featured"],
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     name: "RealtyProp Real Estate Dashboard",
     description:
       "Full-featured admin dashboard for a real estate platform — property listings, analytics, and tenant management built with React.",
-    imageUrl: "/projects/realestate-admin.png",
+    imageUrl: "/projects/realestate-admin-hero.png",
     githubUrl:
       "https://github.com/ghost-sys-coder/realestate-dreamhomes-admin-dashboard",
     projectUrl: "https://admindreamhomes.vercel.app/",
-    tags: ["React.js", "Dashboard", "Web App"],
+    tags: ["React.js", "Dashboard", "Web App", "Featured"],
     credentials: { email: "franktamalejr@gmail.com", password: "M@rgret55" },
     featured: true,
   },
    {
-    id: 5,
+    id: 6,
     name: "Inspire Me Salon Website",
     description:
       "Business website for a premium salon brand — services, gallery, booking info, and brand storytelling with a polished UI.",
     imageUrl: "/projects/salon-website-template.png",
     githubUrl: "https://github.com/ghost-sys-coder/salon-website-template",
     projectUrl: "https://salon-website-template-five.vercel.app/",
-      tags: ["React.js", "Next.js", "Business"],
+      tags: ["React.js", "Next.js", "Business", "Featured"],
     featured: true
   },
   {
-    id: 6,
+    id: 7,
     name: "ShopLocker Ecommerce",
     description:
       "A clean, modern ecommerce experience built with Next.js — product browsing, cart management, and a seamless checkout experience.",
@@ -71,58 +82,58 @@ export const projects: Project[] = [
     tags: ["Next.js", "React.js"],
   },
    {
-    id: 7,
+    id: 8,
     name: "Ecommerce Store with Sanity",
     description:
       "Headless ecommerce storefront powered by Sanity CMS — product pages, cart, checkout flow, and real-time content updates.",
-    imageUrl: "/projects/sanity-ecommerce-store.png",
+    imageUrl: "/projects/vanox-ecommerce-hero.png",
     githubUrl: "https://github.com/ghost-sys-coder/ecommerce_next_sanity_store",
     projectUrl: "https://ecommerce-next-sanity-store.vercel.app/",
     tags: ["React.js", "Next.js", "Sanity CMS"],
   },
   {
-    id: 8,
+    id: 9,
     name: "Brainwave Landing Page",
     description:
       "Sleek, animated AI SaaS landing page inspired by modern design trends — responsive, fast, and visually striking.",
-    imageUrl: "/projects/brainwave-landing-page-project.png",
+    imageUrl: "/projects/brainwave-hero.png",
     githubUrl: "https://github.com/ghost-sys-coder/mern-brainwave-landing-page",
     projectUrl: "https://brainwave-kappa.vercel.app/",
     tags: ["React.js", "Landing Page"],
   },
   {
-    id: 9,
+    id: 10,
     name: "DreamHomes Real Estate",
     description:
       "Fullstack vanilla JavaScript real estate web app — property search, listings, and contact forms without any framework.",
-    imageUrl: "/projects/javascript-realestate-webapp.png",
+    imageUrl: "/projects/dreamhomes-realestate-hero.png",
     githubUrl:
       "https://github.com/ghost-sys-coder/fullstack-vanilla-javascript-realestate-web-app",
     projectUrl: "https://dreamhomesug.onrender.com/",
     tags: ["JavaScript", "Fullstack"],
   },
   {
-    id: 10,
+    id: 11,
     name: "Bienvenidos Apartment",
     description:
       "Property listing website for a residential apartment complex — showcasing units, amenities, and contact information.",
-    imageUrl: "/projects/bienvenidos.png",
+    imageUrl: "/projects/bienvenidos-hero.png",
     githubUrl:
       "https://github.com/ghost-sys-coder/apartment-website/tree/main/Rinah_Website",
     projectUrl: "https://myapartmentwebsite.netlify.app/",
     tags: ["React.js", "Real Estate"],
   },
-  {
-    id: 11,
-    name: "Personal Portfolio V1",
-    description:
-      "First iteration of my personal portfolio — built with vanilla JavaScript to showcase projects and skills.",
-    imageUrl: "/projects/portfolio-project.png",
-    githubUrl:
-      "https://github.com/ghost-sys-coder/personal-portfolio-website-V1",
-    projectUrl: "https://personal-portfolio-version1.netlify.app/",
-    tags: ["JavaScript", "Web App"],
-  },
+  // {
+  //   id: 12,
+  //   name: "Personal Portfolio V1",
+  //   description:
+  //     "First iteration of my personal portfolio — built with vanilla JavaScript to showcase projects and skills.",
+  //   imageUrl: "/projects/portfolio-project.png",
+  //   githubUrl:
+  //     "https://github.com/ghost-sys-coder/personal-portfolio-website-V1",
+  //   projectUrl: "https://personal-portfolio-version1.netlify.app/",
+  //   tags: ["JavaScript", "Web App"],
+  // },
 ];
 
 export const CONTACT_INFO = [

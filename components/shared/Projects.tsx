@@ -13,7 +13,7 @@ interface Credentials {
   password: string;
 }
 
-type FilterValue = "All" | "Next.js" | "React.js" | "AI-Powered" | "JavaScript" | "Dashboard";
+type FilterValue = "All" | "Next.js" | "React.js" | "AI-Powered" | "JavaScript" | "Dashboard" | "Featured";
 
 type TagKey =
   | "Next.js" | "React.js" | "AI-Powered" | "JavaScript"
@@ -30,7 +30,7 @@ interface ProjectCardProps { project: Project; index: number }
 
 
 const ALL_FILTERS: FilterValue[] = [
-  "All", "Next.js", "React.js", "AI-Powered", "JavaScript", "Dashboard",
+  "All", "Next.js", "React.js", "AI-Powered", "JavaScript", "Dashboard", "Featured",
 ];
 
 
