@@ -23,11 +23,10 @@ type TagKey =
 interface SectionLabelProps { children: React.ReactNode }
 interface StatItemProps { value: string | number; label: string }
 interface CredentialsBadgeProps { credentials: Credentials }
-interface ProjectCardProps { project: Project; index: number }
-
-// ── DATA ──────────────────────────────────────────────────────────────────────
+interface ProjectCardProps { project: Project; index: number; isExpanded: boolean }
 
 
+// data
 
 const ALL_FILTERS: FilterValue[] = [
   "All", "Next.js", "React.js", "AI-Powered", "JavaScript", "Dashboard", "Featured",
@@ -55,7 +54,7 @@ function getTagVar(tag: string): string {
 
 const VISIBLE_COUNT = 6;
 
-// ── ANIMATION VARIANTS ────────────────────────────────────────────────────────
+// animation variants
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -73,7 +72,7 @@ const cardVariant: Variants = {
   exit: { opacity: 0, scale: 0.96, transition: { duration: 0.2 } },
 };
 
-// ── SUB-COMPONENTS ────────────────────────────────────────────────────────────
+// subcomponents
 
 function SectionLabel({ children }: SectionLabelProps) {
   return (
@@ -97,7 +96,7 @@ function StatItem({ value, label }: StatItemProps) {
   );
 }
 
-// ── TAG CHIP ──────────────────────────────────────────────────────────────────
+// tag chip
 
 function TagChip({ tag }: { tag: string }) {
   const color = `var(${getTagVar(tag)})`;
@@ -115,7 +114,7 @@ function TagChip({ tag }: { tag: string }) {
   );
 }
 
-// ── CREDENTIALS BADGE ─────────────────────────────────────────────────────────
+// credentials badge
 
 function CredentialsBadge({ credentials }: CredentialsBadgeProps) {
   const [open, setOpen] = useState<boolean>(false);
@@ -165,15 +164,19 @@ function CredentialsBadge({ credentials }: CredentialsBadgeProps) {
   );
 }
 
-// ── PROJECT CARD ──────────────────────────────────────────────────────────────
+// project card
 
-function ProjectCard({ project }: ProjectCardProps) {
+function ProjectCard({ project, isExpanded }: ProjectCardProps) {
   const [hovered, setHovered] = useState<boolean>(false);
   const featured = project.featured ?? false;
+  const showOverlay = hovered || isExpanded;
 
   return (
     <motion.div
       variants={cardVariant}
+      initial="hidden"
+      animate="show"
+      exit="exit"
       layout
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -198,7 +201,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       <div className="relative h-48 overflow-hidden bg-[#0A0A0B]">
         <motion.div
           className="absolute inset-0"
-          animate={{ scale: hovered ? 1.08 : 1 }}
+          animate={{ scale: showOverlay ? 1.08 : 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Image
@@ -215,7 +218,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         {/* Hover overlay */}
         <motion.div
           className="absolute inset-0 bg-[#0A0A0B]/70 flex items-center justify-center gap-4"
-          animate={{ opacity: hovered ? 1 : 0 }}
+          animate={{ opacity: showOverlay ? 1 : 0 }}
           transition={{ duration: 0.25 }}
         >
           <motion.a
@@ -306,7 +309,7 @@ function ProjectCard({ project }: ProjectCardProps) {
   );
 }
 
-// ── MAIN COMPONENT ────────────────────────────────────────────────────────────
+// main component
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<FilterValue>("All");
@@ -436,7 +439,7 @@ export default function Projects() {
         >
           <AnimatePresence mode="popLayout">
             {visible.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
+              <ProjectCard key={project.id} project={project} index={i} isExpanded={showAll} />
             ))}
           </AnimatePresence>
         </motion.div>

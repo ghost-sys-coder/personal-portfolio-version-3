@@ -14,6 +14,16 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    name: "ReachFlow - AI-Powered Lead Tracking CRM",
+    description:"A modern, AI-powered lead tracking CRM for businesses — built with Next.js, PostgreSQL, and AI integration for intelligent lead management.",
+    imageUrl: "/projects/crm-project.png",
+    githubUrl: "https://github.com/ghost-sys-coder/reachflow-crm-leading-tracking-software",
+    projectUrl: "https://crm.veilcode.studio",
+    tags: ["Next.js", "AI-Powered", "PostgreSQL", "Featured"],
+    featured: true,
+  },
+  {
+    id: 3,
     name: "Veilcode Digital Solutions Agency",
     description:
       "A full-featured digital agency website showcasing services, portfolio, and client-facing pages — built with Next.js for performance and SEO.",
@@ -24,7 +34,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     name: "Resume AI Analyzer",
     description:
       "Enterprise-grade ATS powered by AI — analyses CVs, scores candidates, and surfaces insights for recruiters using Next.js and MongoDB.",
@@ -36,7 +46,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
+    id: 5,  
     name: "Chat-2-My-PDF",
     description:
       "AI SaaS app that lets users upload PDFs and have intelligent conversations with their documents — built with Next.js and LLM integration.",
@@ -48,7 +58,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 5,
+    id: 6,
     name: "RealtyProp Real Estate Dashboard",
     description:
       "Full-featured admin dashboard for a real estate platform — property listings, analytics, and tenant management built with React.",
@@ -61,7 +71,7 @@ export const projects: Project[] = [
     featured: true,
   },
    {
-    id: 6,
+    id: 7,
     name: "Inspire Me Salon Website",
     description:
       "Business website for a premium salon brand — services, gallery, booking info, and brand storytelling with a polished UI.",
@@ -72,17 +82,17 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 7,
-    name: "ShopLocker Ecommerce",
+    id: 8,
+    name: "BrightSmile Dental Clinic Website",
     description:
-      "A clean, modern ecommerce experience built with Next.js — product browsing, cart management, and a seamless checkout experience.",
-    imageUrl: "/projects/NextJS-Store-shoplocker.vercel.app.png",
-    githubUrl: "https://github.com/ghost-sys-coder/my-ecommerce-shop",
-    projectUrl: "https://shoplocker.vercel.app/",
+      "A clean, modern, responsive and accessible dental clinic website for Brightsmile Dental Clinic — built with Next.js and React for optimal performance and SEO.",
+    imageUrl: "/projects/brightsmile-dental.png",
+    githubUrl: "https://github.com/ghost-sys-coder/dental-clinic-website.git",
+    projectUrl: "https://dental.veilcode.studio",
     tags: ["Next.js", "React.js"],
   },
    {
-    id: 8,
+    id: 9,
     name: "Ecommerce Store with Sanity",
     description:
       "Headless ecommerce storefront powered by Sanity CMS — product pages, cart, checkout flow, and real-time content updates.",
@@ -92,7 +102,7 @@ export const projects: Project[] = [
     tags: ["React.js", "Next.js", "Sanity CMS"],
   },
   {
-    id: 9,
+    id: 10,
     name: "Brainwave Landing Page",
     description:
       "Sleek, animated AI SaaS landing page inspired by modern design trends — responsive, fast, and visually striking.",
@@ -102,18 +112,17 @@ export const projects: Project[] = [
     tags: ["React.js", "Landing Page"],
   },
   {
-    id: 10,
-    name: "DreamHomes Real Estate",
+    id: 11,
+    name: "Clickfolio",
     description:
-      "Fullstack vanilla JavaScript real estate web app — property search, listings, and contact forms without any framework.",
-    imageUrl: "/projects/dreamhomes-realestate-hero.png",
-    githubUrl:
-      "https://github.com/ghost-sys-coder/fullstack-vanilla-javascript-realestate-web-app",
+      "A responsive, modern, and accessible web application that connects your affiliate links, campaign tracking, and content generation in one place — built with React.js and Next.js for performance and SEO.",
+    imageUrl: "/projects/clickfolio-project.png",
+    githubUrl:"https://github.com/ghost-sys-coder/click-folio-affiliate-project-saas.git",
     projectUrl: "https://dreamhomesug.onrender.com/",
     tags: ["JavaScript", "Fullstack"],
   },
   {
-    id: 11,
+    id: 12,
     name: "Bienvenidos Apartment",
     description:
       "Property listing website for a residential apartment complex — showcasing units, amenities, and contact information.",
@@ -123,17 +132,6 @@ export const projects: Project[] = [
     projectUrl: "https://myapartmentwebsite.netlify.app/",
     tags: ["React.js", "Real Estate"],
   },
-  // {
-  //   id: 12,
-  //   name: "Personal Portfolio V1",
-  //   description:
-  //     "First iteration of my personal portfolio — built with vanilla JavaScript to showcase projects and skills.",
-  //   imageUrl: "/projects/portfolio-project.png",
-  //   githubUrl:
-  //     "https://github.com/ghost-sys-coder/personal-portfolio-website-V1",
-  //   projectUrl: "https://personal-portfolio-version1.netlify.app/",
-  //   tags: ["JavaScript", "Web App"],
-  // },
 ];
 
 export const CONTACT_INFO = [
