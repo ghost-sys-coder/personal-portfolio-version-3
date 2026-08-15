@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -16,6 +17,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,7 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-[#0A0A0B]/95 backdrop-blur-xl border-b border-[#2A2A2E]"
+            ? "site-nav-scrolled bg-[#0A0A0B]/95 backdrop-blur-xl border-b border-[#2A2A2E]"
             : "bg-transparent"
         }`}
       >
@@ -98,10 +100,20 @@ export default function Navigation() {
 
             {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="theme-toggle relative grid h-10 w-10 place-items-center overflow-hidden rounded-lg border border-[#2A2A2E] bg-[#111113] text-[#8A8880] transition-colors duration-200 hover:border-[#C9A84C]/50 hover:text-[#C9A84C] active:scale-95"
+                aria-label={resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                title={resolvedTheme === "dark" ? "Light theme" : "Dark theme"}
+              >
+                {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+
               <a
                 href="/assets/CV_TAMALEFRANK.pdf"
                 download
-                className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[#C9A84C] hover:bg-[#F0C060] text-[#0A0A0B] text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#C9A84C]/25 hover:-translate-y-0.5 active:translate-y-0"
+                className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[#C9A84C] hover:bg-[#F0C060] text-[#FFF8E7] text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#C9A84C]/25 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Download size={14} strokeWidth={2.5} />
                 Download CV
@@ -126,7 +138,7 @@ export default function Navigation() {
         }`}
       >
         <div
-          className="absolute inset-0 bg-[#0A0A0B]/80 backdrop-blur-sm"
+          className="site-menu-backdrop absolute inset-0 bg-[#0A0A0B]/80 backdrop-blur-sm"
           onClick={() => setIsMobileOpen(false)}
         />
         <div
@@ -151,7 +163,7 @@ export default function Navigation() {
           <a
             href="/assets/CV_TAMALEFRANK.pdf"
             download
-            className="flex items-center justify-center gap-2 px-5 py-3 bg-[#C9A84C] hover:bg-[#F0C060] text-[#0A0A0B] text-sm font-semibold rounded-lg transition-colors duration-200 mt-4"
+            className="flex items-center justify-center gap-2 px-5 py-3 bg-[#C9A84C] hover:bg-[#F0C060] text-[#FFF8E7] text-sm font-semibold rounded-lg transition-colors duration-200 mt-4"
           >
             <Download size={14} strokeWidth={2.5} />
             Download CV

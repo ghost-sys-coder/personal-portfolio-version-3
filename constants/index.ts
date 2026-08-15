@@ -132,6 +132,24 @@ export const projects: Project[] = [
     projectUrl: "https://myapartmentwebsite.netlify.app/",
     tags: ["React.js", "Real Estate"],
   },
+  {
+    id: 13,
+    name: "Prestige Properties",
+    description: "A real estate listing website for Prestige Properties — featuring property listings, search functionality, and contact forms.",
+    imageUrl: "/projects/prestige-properties.png",
+    githubUrl: "https://github.com/ghost-sys-coder/real-estate-website-template.git",
+    projectUrl: "https://prestige-template.vercel.app/",
+    tags: ["React.js", "Real Estate"],
+  },
+  {
+    id: 14,
+    name: "VC Studio",
+    description: "VCStudio is an AI assisted content creation and publishing platform that helps creators plan, generate, manage, and publish video content across multiple social platforms from one workspace.",
+    imageUrl: "/projects/vcstudio-project.png",
+    githubUrl: "https://github.com/ghost-sys-coder/vcstudio-video-content-project.git",
+    projectUrl: "https://vcstudio.veilcode.studio/",
+    tags: ["React.js", "Next.js", "AI-Powered"],
+  }
 ];
 
 export const CONTACT_INFO = [
@@ -176,7 +194,7 @@ export const SOCIAL_LINKS = [
   {
     icon: Twitter,
     label: 'Twitter / X',
-    href: 'https://twitter.com/tamalefrank',
+    href: 'https://x.com/veilcodestudio',
     handle: '@tamalefrank',
     color: 'sky-500',
   },

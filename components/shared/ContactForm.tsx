@@ -185,7 +185,7 @@ export default function Contact() {
                     className='group flex items-center gap-4 p-3 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-zinc-950/50 hover:bg-zinc-900/80 transition-all'
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center border border-${color}/20 bg-${color}/5`}>
-                      <Icon size={14} className={`text-white`} />
+                      <Icon size={14} className='text-[#514D45] dark:text-[#F2F0EB]' />
                     </div>
                     <div className='min-w-0'>
                       <p className='text-zinc-100 text-xs font-medium'>{label}</p>
@@ -325,7 +325,7 @@ export default function Contact() {
                 <button
                   type='submit'
                   disabled={status === 'loading'}
-                  className='group w-full flex items-center justify-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-400 disabled:opacity-60 disabled:cursor-not-allowed text-zinc-950 font-semibold rounded-xl transition-all hover:shadow-xl hover:shadow-amber-500/20 hover:-translate-y-0.5 active:translate-y-0'
+                  className='group w-full flex items-center justify-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-400 disabled:opacity-60 disabled:cursor-not-allowed text-[#FFF8E7] font-semibold rounded-xl transition-all hover:shadow-xl hover:shadow-amber-500/20 hover:-translate-y-0.5 active:translate-y-0'
                 >
                   {status === 'loading' ? (
                     <>

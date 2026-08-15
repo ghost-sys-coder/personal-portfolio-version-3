@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Twitter, Mail, ArrowUp, Heart, ExternalLink } from "lucide-react";
 
-// ── DATA ──────────────────────────────────────────────────────────────────────
+// data
 
 const NAV_COLUMNS = [
   {
@@ -23,8 +23,8 @@ const NAV_COLUMNS = [
       { text: "Veilcode Agency", href: "https://veilcodestudio.vercel.app/", external: true },
       { text: "Resume AI Analyzer", href: "https://cvscan-seven.vercel.app/", external: true },
       { text: "Chat-2-My-PDF", href: "https://chat2mypdf.vercel.app/", external: true },
-      { text: "ShopLocker Store", href: "https://shoplocker.vercel.app/", external: true },
-      { text: "RealtyProp Dashboard", href: "https://admindreamhomes.vercel.app/", external: true },
+      { text: "Ecommerce Store", href: "https://ecommerce-next-sanity-store.vercel.app/", external: true },
+      { text: "Prestige Properties", href: "https://prestige-template.vercel.app/", external: true },
     ],
   },
   {
@@ -41,7 +41,7 @@ const NAV_COLUMNS = [
 const SOCIALS = [
   { icon: Github, href: "https://github.com/ghost-sys-coder", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/tamalefrank", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/tamalefrank", label: "Twitter" },
+  { icon: Twitter, href: "https://x.com/veilcodestudio", label: "Twitter" },
   { icon: Mail, href: "mailto:franktamalejr@gmail.com", label: "Email" },
 ];
 
@@ -49,7 +49,7 @@ const TECH_BADGES = [
   "Next.js", "React Native", "TypeScript", "Node.js", "Tailwind CSS", "PostgreSQL",
 ];
 
-// ── HELPERS ───────────────────────────────────────────────────────────────────
+// helpers
 
 function scrollTo(href: string) {
   if (href.startsWith("#")) {
@@ -57,7 +57,7 @@ function scrollTo(href: string) {
   }
 }
 
-// ── MAIN COMPONENT ────────────────────────────────────────────────────────────
+// main component
 
 export default function Footer() {
   const [showScroll, setShowScroll] = useState(false);
@@ -105,7 +105,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-3 shrink-0">
             <a
               href="mailto:franktamalejr@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 bg-[#C9A84C] hover:bg-[#F0C060] text-[#0A0A0B] font-semibold text-sm rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-[#C9A84C]/20 hover:-translate-y-0.5"
+              className="flex items-center gap-2 px-6 py-3 bg-[#C9A84C] hover:bg-[#F0C060] text-[#FFF8E7] font-semibold text-sm rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-[#C9A84C]/20 hover:-translate-y-0.5"
             >
               <Mail size={15} />
               Send an Email
@@ -173,9 +173,9 @@ export default function Footer() {
                   target={href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg border border-[#2A2A2E] text-[#8A8880] hover:text-[#C9A84C] hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/5 transition-all duration-200"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg border border-[#514D45] bg-[#514D45] dark:border-[#2A2A2E] dark:bg-transparent hover:border-[#9A7825] hover:bg-[#9A7825] dark:hover:border-[#C9A84C]/40 dark:hover:bg-[#C9A84C]/5 transition-all duration-200"
                 >
-                  <Icon size={15} />
+                  <Icon size={15} className="text-[#FFF8E7]" />
                 </a>
               ))}
             </div>
@@ -253,7 +253,7 @@ export default function Footer() {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
-        className={`fixed bottom-8 right-8 z-50 w-11 h-11 flex items-center justify-center rounded-xl bg-[#C9A84C] hover:bg-[#F0C060] text-[#0A0A0B] shadow-lg shadow-[#C9A84C]/25 transition-all duration-300 cursor-pointer ${
+        className={`fixed bottom-8 right-8 z-50 w-11 h-11 flex items-center justify-center rounded-xl bg-[#C9A84C] hover:bg-[#F0C060] text-[#FFF8E7] shadow-lg shadow-[#C9A84C]/25 transition-all duration-300 cursor-pointer ${
           showScroll
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-4 pointer-events-none"

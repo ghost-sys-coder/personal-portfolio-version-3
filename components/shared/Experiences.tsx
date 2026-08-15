@@ -521,7 +521,7 @@ export default function Experience() {
           <motion.a
             href="/assets/CV_TAMALEFRANK.pdf"
             download
-            className="shrink-0 flex items-center gap-2 px-6 py-3 bg-[#C9A84C] text-[#0A0A0B] font-semibold text-sm rounded-xl"
+            className="shrink-0 flex items-center gap-2 px-6 py-3 bg-[#C9A84C] text-[#FFF8E7] font-semibold text-sm rounded-xl"
             whileHover={{
               backgroundColor: "#F0C060",
               y: -2,

@@ -156,5 +156,80 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 300ms ease, color 300ms ease;
   }
+}
+
+/* The portfolio predates semantic color tokens. These light-theme mappings keep
+   its established gold identity while translating the original dark surfaces. */
+html:not(.dark) {
+  color-scheme: light;
+  --portfolio-bg: #f7f7f4;
+  --portfolio-bg-alt: #efefe9;
+  --portfolio-surface: #ffffff;
+  --portfolio-surface-hover: #f3f1ea;
+  --portfolio-border: #d9d6cc;
+  --portfolio-border-strong: #c5c0b2;
+  --portfolio-heading: #191815;
+  --portfolio-copy: #615f58;
+  --portfolio-faint: #8b877c;
+  --portfolio-accent: #9a7825;
+  --portfolio-accent-bright: #b28a2b;
+}
+
+html:not(.dark) body {
+  background: var(--portfolio-bg);
+  color: var(--portfolio-heading);
+}
+
+html:not(.dark) [class~="bg-[#080809]"],
+html:not(.dark) [class~="bg-[#0A0A0B]"],
+html:not(.dark) [class~="bg-[#0D0D0F]"] { background-color: var(--portfolio-bg) !important; }
+html:not(.dark) [class~="bg-[#111113]"] { background-color: var(--portfolio-surface) !important; }
+html:not(.dark) [class~="bg-[#161616]"],
+html:not(.dark) [class~="bg-[#1A1A1E]"] { background-color: var(--portfolio-surface-hover) !important; }
+
+html:not(.dark) [class~="text-[#F2F0EB]"] { color: var(--portfolio-heading) !important; }
+html:not(.dark) [class~="text-[#8A8880]"],
+html:not(.dark) [class~="text-[#A0A0A0]"],
+html:not(.dark) [class~="text-[#B0B0B0]"] { color: var(--portfolio-copy) !important; }
+html:not(.dark) [class~="text-[#2A2A2E]"],
+html:not(.dark) [class~="text-[#3A3A3E]"] { color: var(--portfolio-faint) !important; }
+html:not(.dark) [class~="text-[#C9A84C]"] { color: var(--portfolio-accent) !important; }
+
+html:not(.dark) [class~="border-[#1A1A1E]"],
+html:not(.dark) [class~="border-[#252529]"],
+html:not(.dark) [class~="border-[#2A2A2E]"] { border-color: var(--portfolio-border) !important; }
+html:not(.dark) [class~="border-[#3A3A3E]"] { border-color: var(--portfolio-border-strong) !important; }
+
+html:not(.dark) [class~="bg-[#C9A84C]"] { background-color: var(--portfolio-accent) !important; }
+html:not(.dark) [class*="hover:bg-[#F0C060]"]:hover { background-color: var(--portfolio-accent-bright) !important; }
+html:not(.dark) [class~="from-[#C9A84C]"] { --tw-gradient-from: var(--portfolio-accent) !important; }
+html:not(.dark) [class~="via-[#F0C060]"] { --tw-gradient-via: var(--portfolio-accent-bright) !important; }
+html:not(.dark) [class~="to-[#C9A84C]"] { --tw-gradient-to: var(--portfolio-accent) !important; }
+
+html:not(.dark) .site-nav-scrolled { background-color: rgb(247 247 244 / 0.92) !important; }
+html:not(.dark) [class*="shadow-black"] { --tw-shadow-color: rgb(68 60 38 / 0.16) !important; }
+
+html:not(.dark) .site-menu-backdrop { background-color: rgb(25 24 21 / 0.28) !important; }
+/* Contact section uses Tailwind's zinc palette directly. */
+html:not(.dark) .bg-zinc-950 { background-color: var(--portfolio-bg) !important; }
+html:not(.dark) [class*="bg-zinc-950/"] { background-color: rgb(247 247 244 / 0.88) !important; }
+html:not(.dark) [class*="bg-zinc-900/"] { background-color: rgb(255 255 255 / 0.92) !important; }
+html:not(.dark) .border-zinc-800 { border-color: var(--portfolio-border) !important; }
+html:not(.dark) .text-zinc-100,
+html:not(.dark) .text-zinc-200 { color: var(--portfolio-heading) !important; }
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-zinc-600 { color: var(--portfolio-copy) !important; }
+html:not(.dark) input.bg-zinc-950,
+html:not(.dark) textarea.bg-zinc-950 {
+  background-color: #fff !important;
+  color: var(--portfolio-heading) !important;
+}
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder { color: #8b877c !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
 }

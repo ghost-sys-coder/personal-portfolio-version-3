@@ -23,7 +23,7 @@ type TagKey =
 interface SectionLabelProps { children: React.ReactNode }
 interface StatItemProps { value: string | number; label: string }
 interface CredentialsBadgeProps { credentials: Credentials }
-interface ProjectCardProps { project: Project; index: number; isExpanded: boolean }
+interface ProjectCardProps { project: Project }
 
 
 // data
@@ -51,8 +51,6 @@ const TAG_COLOR_VAR: Record<TagKey, string> = {
 function getTagVar(tag: string): string {
   return TAG_COLOR_VAR[tag as TagKey] ?? "--color-tag-webapp";
 }
-
-const VISIBLE_COUNT = 6;
 
 // animation variants
 
@@ -166,10 +164,10 @@ function CredentialsBadge({ credentials }: CredentialsBadgeProps) {
 
 // project card
 
-function ProjectCard({ project, isExpanded }: ProjectCardProps) {
+function ProjectCard({ project }: ProjectCardProps) {
   const [hovered, setHovered] = useState<boolean>(false);
   const featured = project.featured ?? false;
-  const showOverlay = hovered || isExpanded;
+  const showOverlay = hovered;
 
   return (
     <motion.div
@@ -217,7 +215,7 @@ function ProjectCard({ project, isExpanded }: ProjectCardProps) {
 
         {/* Hover overlay */}
         <motion.div
-          className="absolute inset-0 bg-[#0A0A0B]/70 flex items-center justify-center gap-4"
+          className="absolute inset-0 bg-black/30 flex items-center justify-center gap-4"
           animate={{ opacity: showOverlay ? 1 : 0 }}
           transition={{ duration: 0.25 }}
         >
@@ -226,7 +224,7 @@ function ProjectCard({ project, isExpanded }: ProjectCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
-            className="flex items-center gap-2 px-4 py-2 bg-skill-gold text-[#0A0A0B] text-xs font-bold rounded-lg"
+            className="flex items-center gap-2 px-4 py-2 bg-skill-gold text-[#FFF8E7] text-xs font-bold rounded-lg"
             whileHover={{ backgroundColor: "#F0C060", scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.15 }}
@@ -313,7 +311,6 @@ function ProjectCard({ project, isExpanded }: ProjectCardProps) {
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<FilterValue>("All");
-  const [showAll, setShowAll] = useState<boolean>(false);
 
   const headerRef = useRef<HTMLDivElement>(null);
   const filterRef = useRef<HTMLDivElement>(null);
@@ -333,9 +330,6 @@ export default function Projects() {
           t.toLowerCase().includes(activeFilter.toLowerCase())
         )
       );
-
-  const visible = showAll ? filtered : filtered.slice(0, VISIBLE_COUNT);
-
 
   const countFor = (filter: string): number =>
     projects.filter((p) =>
@@ -403,7 +397,7 @@ export default function Projects() {
                 className={cn(
                   "px-4 py-2 rounded-full text-sm font-medium border transition-colors duration-200 cursor-pointer",
                   isActive
-                    ? "bg-skill-gold border-skill-gold text-[#0A0A0B] shadow-lg shadow-skill-gold/20"
+                    ? "bg-skill-gold border-skill-gold text-[#FFF8E7] shadow-lg shadow-skill-gold/20"
                     : "bg-[#111113] border-[#2A2A2E] text-[#8A8880] hover:text-[#F2F0EB] hover:border-[#3A3A3E]"
                 )}
               >
@@ -438,8 +432,8 @@ export default function Projects() {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {visible.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} isExpanded={showAll} />
+            {filtered.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </AnimatePresence>
         </motion.div>
@@ -458,33 +452,6 @@ export default function Projects() {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* ── SHOW MORE / LESS ── */}
-        {filtered.length > VISIBLE_COUNT && (
-          <div className="flex justify-center mt-12">
-            <motion.button
-              onClick={() => setShowAll((prev) => !prev)}
-              whileHover={{
-                borderColor: "rgba(201,168,76,0.5)",
-                color: "#C9A84C",
-                backgroundColor: "#1A1A1E",
-              }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.2 }}
-              className="group flex items-center gap-2 px-8 py-3.5 border border-[#2A2A2E] bg-[#111113] text-[#8A8880] font-medium rounded-xl cursor-pointer"
-            >
-              {showAll
-                ? "Show Less"
-                : `Show ${filtered.length - VISIBLE_COUNT} More Projects`}
-              <motion.div
-                animate={{ rotate: showAll ? -90 : 90 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ChevronRight size={16} />
-              </motion.div>
-            </motion.button>
-          </div>
-        )}
 
         {/* ── GITHUB CTA ── */}
         <motion.div

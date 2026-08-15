@@ -313,7 +313,7 @@ export default function Hero() {
             >
               <motion.button
                 onClick={() => scrollTo("projects")}
-                className="group flex items-center gap-2 px-7 py-3.5 bg-[#C9A84C] text-[#0A0A0B] font-semibold rounded-lg cursor-pointer"
+                className="group flex items-center gap-2 px-7 py-3.5 bg-[#C9A84C] text-[#FFF8E7] font-semibold rounded-lg cursor-pointer"
                 whileHover={{
                   backgroundColor: "#F0C060",
                   y: -2,

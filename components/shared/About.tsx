@@ -138,7 +138,7 @@ export default function About() {
             {/* Bio text */}
             <div className="space-y-5 text-[#A0A0A0] leading-relaxed text-base">
               <p>
-                I&apos;m <strong className="text-white font-medium">Tamale Frank</strong>, a full-stack web developer and cross-platform mobile applications engineer with over 5 years of professional experience building digital products people love to use.
+                I&apos;m <strong className="text-[#F2F0EB] font-medium">Tamale Frank</strong>, a full-stack web developer and cross-platform mobile applications engineer with over 5 years of professional experience building digital products people love to use.
               </p>
               <p>
                 My work spans the full stack — relational & NoSQL databases, REST/GraphQL APIs, pixel-perfect React frontends, and production React Native apps on iOS & Android.
@@ -192,7 +192,7 @@ export default function About() {
                       <span className="font-mono text-amber-500/60 text-xs tracking-wider">
                         {item.year}
                       </span>
-                      <h4 className="mt-1 text-white font-medium group-hover:text-amber-400 transition-colors">
+                      <h4 className="mt-1 text-[#F2F0EB] font-medium group-hover:text-amber-400 transition-colors">
                         {item.title}
                       </h4>
                       <p className="mt-1.5 text-[#A0A0A0] text-sm leading-relaxed">
