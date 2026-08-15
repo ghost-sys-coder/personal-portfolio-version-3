@@ -389,7 +389,6 @@ export default function Projects() {
                 key={filter}
                 onClick={() => {
                   setActiveFilter(filter);
-                  setShowAll(false);
                 }}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
